@@ -14,13 +14,25 @@
   и выводя на экран результаты
 
 """
+def compare_strings(str1, str2):
+    if not (isinstance(str1, str) or isinstance(str2, str)):
+        return 0
+    if len(str1) == len(str2) and (str1 == str2):
+        return 1
+    elif len(str1) > len(str2):
+        return 2
+    elif len(str1) != len(str2) and str2 == 'learn':
+        return 3
+    else:
+        return 100 #в задаче не сказано что возвращать в таком случае
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
-    
+    print(compare_strings(2,3))
+    print(compare_strings('test', 'test'))
+    print(compare_strings('Testing','test'))
+    print(compare_strings('testing','learn'))
+    print(compare_strings('test','learn'))
+    print(compare_strings('learn','testing'))
+   
 if __name__ == "__main__":
     main()

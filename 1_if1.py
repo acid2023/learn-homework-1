@@ -14,12 +14,25 @@
 
 """
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+def occupancy(age):
+    if isinstance(age, str): age = int(age)
+    if age <= 6:
+        occupation = 'детский сад'
+    elif age <= 17:
+        occupation = 'школа'
+    elif age <= 21:
+        occupation = 'ВУЗ'
+    elif age <= 65:
+        occupation = 'работа'
+    else:
+        occupation = 'пенсия'
+    return occupation
+      
 
+def main():
+    age = input('Введите свой возраст ')
+    print (age)
+    occupation = occupancy (age)
+    print(occupation)
 if __name__ == "__main__":
     main()
